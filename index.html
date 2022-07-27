@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <img src="./images/logo.svg" alt="app-logo" srcset="" class="app-name">
+  </header>
+  <main>
+    <section>
+      <div class="bill-section">
+        <h5 class="each-section-heading">Bill</h5>
+        <input type="text" class="bill-input" id="bill-input" 
+        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+        placeholder="0"
+        >
+      </div>
+      <div class="tip-section">
+        <h5>Select Tip %</h5>
+        <div class="tip-percentage-container">
+          <input type="submit" value="5%" class="tip-percentage" id="tip-percentage"></input >
+          <input type="submit" value="10%" class="tip-percentage" id="tip-percentage"></input >
+          <input type="submit" value="15%" class="tip-percentage" id="tip-percentage"></input >
+          <input type="submit" value="25%" class="tip-percentage" id="tip-percentage"></input >
+          <input type="submit" value="50%" class="tip-percentage" id="tip-percentage"></input >
+          <input type="text" class="custom-input" placeholder="Custom" id="custom-input"
+          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          >
+        </div>
+      </div>
+      <div class="people-section">
+        <h5>Number of People</h5>
+        <small id="error-message"></small>
+        <input type="text" class="people-input" id="people-input" 
+         onkeypress="return isNumberKey(event)"
+         oninput="validateForZeroPerson()"
+         placeholder="0"
+         >
+      </div>
+    </section>
+    <aside>
+      <div class="tip-amount">
+        <p>Tip Amount <br> <span>/person</span></p>
+        <h2 id="tip-per-person">$0</h2>
+      </div>
+      <div class="total-person">
+        <p>Total <br> <span>/person</span></p>
+        <h2 id="total-per-person">$0</h2>
+      </div>
+      <button class="reset-button" id="reset-button">Reset</button>
+    </aside>
+  </main>
+  <script src="index.js"></script>
+</body>
+</html>

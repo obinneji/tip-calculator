@@ -1,0 +1,193 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+
+    --StrongCyan: hsl(172, 67%, 45%);
+    --VeryDarkCyan: hsl(183, 100%, 15%);
+    --DarkGrayishCyan:  hsl(186, 14%, 43%);
+    --GrayishCyan: hsl(184, 14%, 56%);
+    --LightGrayishCyan: hsl(185, 41%, 84%);
+    --VeryLightGrayishCyan: hsl(189, 41%, 97%);
+    --white: hsl(0, 0%, 100%);
+    --FormInputFontSize: 24px;
+}
+body{
+    font-family: 'Space Mono';
+    max-width: 1440px;
+    background-color: var(--LightGrayishCyan);
+    font-size: 16px;
+}
+header{
+    margin-top: 4em;
+    margin-bottom: 2.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.app-name{
+    text-transform: uppercase;
+    color: var(--VeryDarkCyan);
+}
+
+main{
+    background-color: var(--white);
+    margin: auto;
+    width: 70%;
+    border-radius: 10px;
+    display: flex;
+    gap: 1em;
+}
+section{
+    margin: 1em;
+    flex-basis: 50%;
+}
+section > div {
+    margin-bottom: 2em;
+}
+section >div >h5{
+    color: var(--DarkGrayishCyan);
+    margin-bottom: .5em;
+}
+.bill-input,.people-input{
+    font-family: 'space mono';
+    font-size: 24px;
+    padding: 8px;
+    width: 100%;
+    outline: 0;
+    border: none;
+    background-color: var(--VeryLightGrayishCyan);
+    border-radius: 7px;
+    text-align: right;
+}
+
+.bill-input{
+    background-image: url(./images/icon-dollar.svg) ;
+    background-repeat: no-repeat;
+    background-position: top 50% left 20px; 
+}
+.people-input{
+    background-image: url(./images/icon-person.svg) ;
+    background-repeat: no-repeat;
+    background-position: top 50% left 20px; 
+}
+.bill-input:hover , .people-input:hover, .custom-input:hover{
+    cursor: pointer;
+    border: 2px var(--StrongCyan) solid;
+}
+.bill-input::placeholder, .people-input::placeholder {
+    color: var(--LightGrayishCyan);
+}
+.tip-percentage-container{
+    display: grid;
+    grid-template-columns: repeat(3,120px);
+    gap: 1em;
+}
+.tip-percentage{
+    padding: 5px 10px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: var(--VeryDarkCyan);
+    border: none;
+    border-radius: 5px;
+    font-size: 24px;
+    color: var(--white);
+    font-family: 'space mono';
+}
+.custom-input{
+   background-color: var(--VeryLightGrayishCyan);
+   border: none;
+   border-radius: 5px;
+   font-family: 'space mono';
+   text-align: right;
+   font-size: bold;
+   outline: none;
+   padding-right: 10px;
+   font-size: 24px;
+}
+.custom-input::placeholder{
+    text-align: center;
+}
+.tip-percentage:hover{
+    color: var(--VeryDarkCyan);
+    background-color: var(--StrongCyan);
+    cursor: pointer;
+}
+aside{
+    width: 50%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--VeryDarkCyan);
+    margin: 2em;
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.tip-amount, .total-person{
+    display: flex;
+    margin-bottom: 2em;
+}
+.tip-amount > p, .total-person > p {
+    color: white;
+    font-weight: bold;
+}
+.tip-amount > p >span, .total-person> p>  span{
+    font-weight: lighter;
+    color: var(--GrayishCyan);
+}
+
+
+.tip-amount > h2, .total-person >h2{
+    margin-left: auto;
+    color: var(--StrongCyan);
+    font-size: 40px;
+}
+.reset-button{
+    margin-top: 4em;
+    width: 100%;
+    padding: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--StrongCyan);
+    border-radius: 7px;
+    color: var(--VeryDarkCyan);
+    border: none;
+    font-weight: 700;
+    font-family: "space mono";
+}
+.reset-button:hover{
+    cursor: pointer;
+   opacity: .5;
+}
+#error-message{
+    text-align: right;
+    color: red;
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+    top: -20px;
+}
+.error{
+    
+    border: 3px solid red;
+}
+@media (max-width: 800px) {
+    
+    main{
+        flex-direction: column;
+        width: 100%;
+    }
+    .bill-input,.people-input{
+        padding: 15px;
+        width: 90%;
+    }
+    aside{
+        width: 70%;
+    }
+    .tip-percentage-container{
+
+        grid-template-columns: repeat(3,100px);
+    }
+}
