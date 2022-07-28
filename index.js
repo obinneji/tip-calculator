@@ -11,16 +11,17 @@ const errorMsg = document.getElementById("error-message");
 let eachPercentageValue
 let tipAmount
 
-// validating person inputfield to only numbers and not accepting zero
+// validating inputfield to accept only numbers
 function isNumberKey(evt)
 {
-	var charCode = (evt.which) ? evt.which : event.keyCode
+	var charCode = (evt.which) ? evt.which : evt.keyCode
 	if (charCode > 31 && (charCode < 48 || charCode > 57))
 	return false;
 
 	return true;
     
 }
+// validating for zero Persons 
 function validateForZeroPerson(){
   if(person.value == 0 || person.value < 0) {
       errorMsg.textContent = "person cannot be zero"
@@ -46,6 +47,7 @@ for(let i =0; i< percentageButton.length; i++){
         totalPerPerson.innerHTML = `$${totalAmountPerPersonRoundUp}`
     })
     }
+    // custom percentage button
 customPercentage.addEventListener('change', function(){
     let customValue = parseFloat(customPercentage.value) / 100
      // calculate tip per person

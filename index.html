@@ -19,7 +19,7 @@
       <div class="bill-section">
         <h5 class="each-section-heading">Bill</h5>
         <input type="text" class="bill-input" id="bill-input" 
-        oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+        onkeypress="return isNumberKey(event)"
         placeholder="0"
         >
       </div>
@@ -32,7 +32,7 @@
           <input type="submit" value="25%" class="tip-percentage" id="tip-percentage"></input >
           <input type="submit" value="50%" class="tip-percentage" id="tip-percentage"></input >
           <input type="text" class="custom-input" placeholder="Custom" id="custom-input"
-          oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"
+          onkeypress="return isNumberKey(event)"
           >
         </div>
       </div>
