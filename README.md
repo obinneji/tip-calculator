@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- [Solution URL](https://github.com/obinneji/tip-calculator)
+- [Live Site](https://tip-calculators.vercel.app/)
 
 ## My process
 
@@ -45,7 +45,7 @@ Users should be able to:
 - Flexbox
 - CSS Grid
 - Desktop-first workflow
-- Javascript
+-  Vanilla Javascript
 
 
 
